@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+.venv/
+.git-backup/
+data/*.db
+data/demo_environment/
+logs/*.log
+reports/*.csv
+reports/*.pdf
+.build/
+.codex-finalizer/
+node_modules/

@@ -1,0 +1,2 @@
+Demo monitor: {'running': True, 'state': 'running', 'configured_directories': 6}
+Demo complete. Open the dashboard to review actual persisted events and alerts.

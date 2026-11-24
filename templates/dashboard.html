@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block heading %}Security Overview{% endblock %}
+{% block content %}
+<section class="stat-grid" id="statGrid">
+  <article class="metric"><span class="metric-icon blue"><i class="bi bi-folder2-open"></i></span><div><small>Total File Events</small><strong id="totalEvents">—</strong></div></article>
+  <article class="metric"><span class="metric-icon violet"><i class="bi bi-file-earmark-lock"></i></span><div><small>Sensitive Activity</small><strong id="sensitiveEvents">—</strong></div></article>
+  <article class="metric"><span class="metric-icon amber"><i class="bi bi-bell-fill"></i></span><div><small>Open Alerts</small><strong id="openAlerts">—</strong></div></article>
+  <article class="metric"><span class="metric-icon red"><i class="bi bi-exclamation-octagon"></i></span><div><small>Integrity Violations</small><strong id="integrityViolations">—</strong></div></article>
+  <article class="metric"><span class="metric-icon teal"><i class="bi bi-hdd-network"></i></span><div><small>Active Directories</small><strong id="directories">—</strong></div></article>
+</section>
+<section class="dashboard-grid charts-grid"><article class="panel"><h2>File activity over time</h2><canvas id="activityChart"></canvas></article><article class="panel"><h2>Event distribution</h2><canvas id="eventChart"></canvas></article><article class="panel"><h2>Alerts by severity</h2><canvas id="alertChart"></canvas></article><article class="panel"><h2>Integrity status</h2><canvas id="integrityChart"></canvas></article></section>
+<section class="dashboard-grid bottom-grid"><article class="panel recent"><div class="panel-title"><div><h2>Recent activity</h2><p>Latest persisted filesystem events</p></div><a href="/activity" class="text-link">View all</a></div><div class="table-responsive"><table class="table table-dark table-hover"><thead><tr><th>Time</th><th>Activity</th><th>File</th><th>Risk</th></tr></thead><tbody id="recentEvents"></tbody></table></div></article>
+<article class="panel overview"><h2>Monitoring health</h2><div class="overview-line"><span>Service status</span><b id="serviceStatus">—</b></div><div class="overview-line"><span>Enabled policies</span><b id="enabledPolicies">—</b></div><div class="overview-line"><span>Latest alert</span><b id="latestAlert">None</b></div><p class="muted mt-4">Watchdog records real filesystem events from directories you choose. Process attribution may be unavailable on this platform.</p></article></section>
+{% endblock %}{% block scripts %}<script src="{{ url_for('static', filename='js/charts.js') }}"></script><script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>{% endblock %}

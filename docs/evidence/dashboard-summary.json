@@ -1,0 +1,8 @@
+{
+  "alerts": 3,
+  "directories": 6,
+  "enabled_policies": 1,
+  "integrity_violations": 2,
+  "sensitive_events": 6,
+  "total_events": 52
+}
